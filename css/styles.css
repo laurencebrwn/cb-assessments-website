@@ -1,0 +1,62 @@
+/*--mobile--*/
+body {
+	margin: 0;
+	background-image: url("assets/background.jpg");
+	background-size: cover;
+}
+.header {
+	position: fixed;
+	padding-bottom: 15%;
+	padding-top: 0;
+	height: 0;
+	width: 100%;
+	z-index: 2;
+}
+.header #logo {
+	width: auto;
+	height: 6vmin;
+	position: absolute;
+	margin: 2vmin;
+    color: black;
+	background-color: #00C49A;
+	font-family: "Roboto";
+	font-weight: 400;
+	font-size: 4vmin;
+	text-decoration: none;
+	text-align: center;
+	line-height: 6vmin;
+	padding: 0 1vmin 0 1vmin;
+}
+.header ul {
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+}
+.header li {
+	float: right;
+	padding: 2vmin;
+	font-family: "Roboto";
+	font-weight: 400;
+}
+.header li a {
+	display: block;
+	height: 6vmin;
+	width: auto;
+	line-height: 6vmin;
+	background-color: white;
+	color: black;
+	text-align: center;
+	padding: 0 1vmin 0 1vmin;
+	font-size: 2vmin;
+	text-decoration: none;
+	transition: all .2s ease-in-out;
+}
+.header li a:hover:not(.active) {
+	background-color: #FFC2B4;
+	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
+	transform: scale(1.1);
+}
+.header li a.active {
+	color: black;
+	background-color: #FB8F67;
+}
