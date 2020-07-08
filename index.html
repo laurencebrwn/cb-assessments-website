@@ -4,24 +4,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
 	<title>CB Assessments</title>
 </head>
 
 <body>
 <div class="header">
-	<a id="logo" href="index.html"><i>CB ASSESSMENTS</i></a>
-	<ul>
-		<li><a class="active"><i>HOME</i></a></li>
-		<li><a href="contact.html"><i>CONTACT</i></a></li>
-		<li><a href="privacy.html"><i>PRIVACY POLICY</i></a></li>
-	</ul>
-</div>
-
-<div class="section">
-	<div class="image-panel">
-		<img src="assets/panel-1.jpg" alt="shallow focus photo of person wearing ballpoint pen">
-		<h2>"Quote"</h2>
-		<a>Context and explanation.</a>
+	<h1><a id="logo" href="index.html"><i>CB ASSESSMENTS</i></a></h1>
+	<nav role="navigation">
+  		<div id="menuToggle">
+		    <input type="checkbox"/>
+		    <span></span>
+		    <span></span>
+		    <span></span>
+			<ul id="menu">
+				<a class="active"><li><h2><i>HOME</i></h2></li></a>
+				<a href="contact.html"><li><h2><i>CONTACT</i></h2></li></a>
+				<a href="privacy.html"><li><h2><i>PRIVACY POLICY</i></h2></li></a>
+			</ul>
+		</div>
+	</nav>
+	<div class="desktopHeader">
+		<ul>
+			<li><a class="active"><h2><i>HOME</i></h2></a></li>
+			<li><a href="contact.html"><h2><i>CONTACT</i></h2></a></li>
+			<li><a href="privacy.html"><h2><i>PRIVACY POLICY</i></h2></a></li>
+		</ul>
 	</div>
+</div>
+<div class="section" id="landingScreen">
+		<h1 id="logo"><i>CB ASSESSMENTS</i></h1>
+		<h2><span class="paddedHighlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></h2>
+		<a id="scrollChevron" href="#section2"><span></span></a>
+</div>
+<div class="section" id="section2">
+	<h1 id="logo"><i>SECTION 1</i></h1>
+	<h2><span class="paddedHighlight">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></h2>
 </div>
 </body>

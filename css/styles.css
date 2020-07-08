@@ -1,62 +1,286 @@
 /*--mobile--*/
+html{
+	font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
 body {
 	margin: 0;
-	background-image: url("assets/background.jpg");
-	background-size: cover;
+	overflow-x: hidden;
+}
+h1{
+	font-family: "Roboto";
+	font-weight: 900;
+	font-size: 2rem;
+	margin: 0;
+}
+h2{
+	font-family: "Roboto";
+	font-weight: 400;
+	font-size: 1rem;
+	margin: 0;
+
+}
+p{
+	font-family: "Roboto";
+	font-weight: 100;
+	font-size: 0.5rem;
+	margin: 0;
 }
 .header {
 	position: fixed;
-	padding-bottom: 15%;
+	top:0;
+	z-index: 1;
+	padding-bottom: 0;
 	padding-top: 0;
-	height: 0;
+	height: 4.4rem;
 	width: 100%;
-	z-index: 2;
 }
 .header #logo {
 	width: auto;
-	height: 6vmin;
 	position: absolute;
-	margin: 2vmin;
+	margin: 0.85rem;
+	line-height: 2.7rem;
     color: black;
 	background-color: #00C49A;
-	font-family: "Roboto";
-	font-weight: 400;
-	font-size: 4vmin;
 	text-decoration: none;
 	text-align: center;
-	line-height: 6vmin;
-	padding: 0 1vmin 0 1vmin;
+	padding: 0 0.42rem 0 0.42rem;
 }
-.header ul {
-	list-style-type: none;
-	margin: 0;
-	overflow: hidden;
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding:0.6rem;
+  margin: 1rem;
+  z-index: 2;
+  background-color: #FB8F67;
+  -webkit-user-select: none;
+  user-select: none;
 }
-.header li {
-	float: right;
-	padding: 2vmin;
-	font-family: "Roboto";
-	font-weight: 400;
+#menuToggle a {
+  text-decoration: none;
+  color: #000000;
+  transition: color 0.3s ease;
 }
-.header li a {
-	display: block;
-	height: 6vmin;
+#menuToggle a:hover {
+  color: tomato;
+}
+#menuToggle input {
+  display: block;
+  top:-7%;
+  left:-7%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 3; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+#menuToggle span {
+  display: block;
+  width: 2rem/*33px*/;
+  height: 0.28rem/*4px*/;
+  margin: 0.2rem 0 0.2rem 0;
+  position: relative;
+  background: #000000;
+  z-index: 2;
+  transform-origin: 0 0.14rem/*4px 0px*/;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-0.07rem,-0.28rem)/*-3px, -4px)*/;
+  background: #232323;
+}
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.001, 0.001);
+}
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0.07rem,0.28rem)/*1px, 1px*/;
+}
+#menu {
+  position: absolute;
+  width: 80vw;
+  height: auto;
+  top:0;
+  left:4.2rem;
+  margin: -1rem 0 0 0;
+  padding: 11vw;
+  background: #FFC2B4;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
+  transform-origin: center;
+  transform: none;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li {
+  padding: 0.75rem 0;
+}
+#menuToggle input:checked ~ ul {
+  transform: translate(-100%, 0);
+  display:block;
+}
+#menuToggle input:not(:checked) ~ ul {
+  transform: none;
+}
+.section{
+	height:100vh;
+	width: 100vw;
+	display: flex;
+	overflow:hidden;
+	text-align:center;
+	position:relative;
+	background-color: #FFFFFF;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.section h1 {
 	width: auto;
-	line-height: 6vmin;
-	background-color: white;
-	color: black;
-	text-align: center;
-	padding: 0 1vmin 0 1vmin;
-	font-size: 2vmin;
+    color: black;
+	background-color: #00C49A;
 	text-decoration: none;
-	transition: all .2s ease-in-out;
+	text-align: center;
+	padding:0.167rem;
+	filter: drop-shadow(0 0 0.1rem rgba(0,0,0,.5));
+	z-index:1;
 }
-.header li a:hover:not(.active) {
-	background-color: #FFC2B4;
-	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
-	transform: scale(1.1);
+.section h2 {
+	width: auto;
+    color: black;
+    max-width: 80vw;
+	text-decoration: none;
+	text-align: center;
+	filter: drop-shadow(0 0 0.1rem rgba(0,0,0,.5));
 }
-.header li a.active {
-	color: black;
-	background-color: #FB8F67;
+#landingScreen {
+	background: url("../assets/panel-1.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	z-index:90;
+}
+#landingScreen #logo{	
+	z-index:91;
+}
+#scrollChevron{
+	position: absolute;
+ 	bottom: 20px;
+	left: 50%;
+	z-index: 2;
+ 	display: inline-block;
+  	-webkit-transform: translate(0, -50%);
+  	transform: translate(0, -50%);
+  	color: #fff;
+   	transition: opacity .3s;
+   	padding-top: 60px;
+}
+#scrollChevron:hover{
+	opacity: 0.5;
+}
+#scrollChevron span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-left: -0.5rem;
+  border-left: 0.25rem solid #000;
+  border-bottom: 0.25rem solid #000;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb04 2s infinite;
+  animation: sdb04 2s infinite;
+  box-sizing: border-box;
+  filter: drop-shadow(0 0 0.1rem rgba(0,0,0,.5));
+}
+@-webkit-keyframes sdb04 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+}
+@keyframes sdb04 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+.paddedHighlight{
+	display: inline;
+    background: #FFFFFF;
+    padding: 0.175rem;
+    line-height: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    box-shadow: 0.35rem 0 0 #FFFFFF, -0.35rem 0 0 #FFFFFF;
+    -webkit-box-decoration-break: clone;
+    -ms-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+.desktopHeader {
+	display: none;
+}
+
+/*------------------------------desktop------------------------------*/
+@media only screen and (min-width: 992px) {
+	#landingScreen h2{
+	    max-width: 30rem;
+	}
+	.desktopHeader ul {
+		list-style-type: none;
+		margin: 0;
+		overflow: hidden;
+	}
+	.desktopHeader li {
+		float: right;
+		margin: 0.85rem;
+	}
+	.desktopHeader li a {
+		display: block;
+		width: auto;
+		line-height: 2.7rem;
+		background-color: white;
+		color: black;
+		text-align: center;
+		padding: 0 0.42rem 0 0.42rem;
+		text-decoration: none;
+		transition: all .2s ease-in-out;
+	}
+	.desktopHeader li a:hover:not(.active) {
+		background-color: #FFC2B4;
+		filter: drop-shadow(0 0 0.1rem rgba(0,0,0,.3));
+		transform: scale(1.05);
+	}
+	.desktopHeader li a.active {
+		color: black;
+		background-color: #FB8F67;
+	}
+	#menuToggle {
+		display: none;
+	}
+	.desktopHeader {
+		display: inline;
+	}
 }
