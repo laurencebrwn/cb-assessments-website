@@ -14,6 +14,13 @@ h1{
 }
 h2{
 	font-family: "Roboto";
+	font-weight: 900;
+	font-size: 1.5rem;
+	margin: 0;
+
+}
+h3{
+	font-family: "Roboto";
 	font-weight: 400;
 	font-size: 1rem;
 	margin: 0;
@@ -37,7 +44,7 @@ p{
 .header #logo {
 	width: auto;
 	position: absolute;
-	margin: 0.85rem;
+	margin: 1rem;
 	line-height: 2.7rem;
     color: black;
 	background-color: #00C49A;
@@ -50,7 +57,7 @@ p{
   position: absolute;
   top: 0;
   right: 0;
-  padding:0.6rem;
+  padding:0.5084rem;
   margin: 1rem;
   z-index: 2;
   background-color: #FB8F67;
@@ -166,7 +173,7 @@ p{
 	filter: drop-shadow(0 0 0.1rem rgba(0,0,0,.5));
 	z-index:1;
 }
-.section h2 {
+.section h3 {
 	width: auto;
     color: black;
     max-width: 80vw;
@@ -277,7 +284,24 @@ p{
 	color: black;
 	text-decoration: none;
 }
-
+.moreLink{
+	background-color: #FFC2B4;
+	color: black;
+	z-index: 1;
+	width: auto;
+	text-decoration: none;
+	text-align: center;
+	padding:0.167rem;
+	filter: drop-shadow(0 0 0.1rem rgba(0,0,0,.5));
+	margin-top: -0.05rem;
+	text-decoration: none;
+	transition: all .2s ease-in-out;
+}
+.moreLink:hover {
+	background-color: #FB8F67;
+	filter: drop-shadow(0 0 0.1rem rgba(0,0,0,.3));
+	transform: scale(1.05);
+}
 /*------------------------------desktop------------------------------*/
 @media only screen and (min-width: 992px) {
 	#landingScreen h2{
@@ -317,5 +341,17 @@ p{
 	}
 	.desktopHeader {
 		display: inline;
+	}
+	h1{
+		font-size: 1.5rem;
+	}
+	h2{
+		font-size: 1.1rem;
+	}
+	h3{
+		font-size: 1rem;
+	}
+	p{
+		font-size: 0.5rem;
 	}
 }
